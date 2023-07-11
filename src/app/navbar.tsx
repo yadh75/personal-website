@@ -81,7 +81,7 @@ function Theme() {
 
 function Navigation({ label, href }: NavigationProps) {
     const pathname = usePathname();
-    const isInternal = /[#/]/g.test(href);
+    const isInternal = /^[#/]/g.test(href);
 
     return (
         <Link key={label} href={href} target={isInternal ? "_self" : "_blank"}>
