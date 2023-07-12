@@ -34,6 +34,8 @@
         --ring: 240 5% 64.9%;
 
         --radius: 0.5rem;
+        --paper-radius: 255px 15px 255px 15px/15px 255px 15px 255px;
+        --paper-radius-hover: 10px 212px 30px 251px/223px 12px 223px 25px;
     }
 
     .dark {
@@ -82,12 +84,11 @@
     }
 
     .paper_border {
-        @apply border-[6px] border-solid border-foreground;
-        border-radius: 255px 15px 255px 15px/15px 255px 15px 255px;
+        @apply rounded-paper border-[6px] border-solid border-foreground;
     }
 
     .paper_border:hover {
-        border-radius: 10px 212px 30px 251px/223px 12px 223px 25px;
+        @apply rounded-paper-hover;
     }
 }
 
