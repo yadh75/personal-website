@@ -1,9 +1,11 @@
 "use client";
 
+import { Fragment, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon, AppWindowIcon } from "lucide-react";
+import { MoonIcon, SunIcon, AppWindowIcon, MenuIcon } from "lucide-react";
+import { Transition } from "@headlessui/react";
 
 import Button from "@/components/forms/button";
 import {
@@ -96,21 +98,71 @@ function Navigation({ label, href }: NavigationProps) {
     );
 }
 
+function MobileNavigation({ label, href }: NavigationProps) {
+    const pathname = usePathname();
+    const isInternal = /^[#/]/g.test(href);
+
+    return (
+        <Link key={label} href={href} target={isInternal ? "_self" : "_blank"}>
+            <span
+                className={cn(
+                    "mobile_navigation tracking-wide",
+                    pathname === href && "active"
+                )}
+            >
+                {label}
+            </span>
+        </Link>
+    );
+}
+
 export default function MainNavbar() {
+    const [opened, setOpened] = useState(false);
+
     return (
         <nav className="theme paper_border sticky top-0 z-50 w-full">
             <div className="w-full px-4 py-3">
                 <div className="flex flex-wrap justify-between gap-2">
                     <div className="flex flex-row flex-wrap gap-2">
-                        {navigations.map((nav) => (
-                            <Navigation key={nav.label} {...nav} />
-                        ))}
+                        <button
+                            className="sm:!hidden"
+                            onClick={() => setOpened((o) => !o)}
+                        >
+                            <span>
+                                <MenuIcon className="h-5 w-5" />
+                            </span>
+                        </button>
+                        <div className="hidden flex-row flex-wrap gap-2 sm:!flex">
+                            {navigations.map((nav) => (
+                                <Navigation key={nav.label} {...nav} />
+                            ))}
+                        </div>
                     </div>
                     <div className="flex flex-row flex-wrap gap-2">
                         <Theme />
                     </div>
                 </div>
             </div>
+            <Transition
+                as={Fragment}
+                show={opened}
+                enter="duration-75 transition ease-linear"
+                enterFrom="opacity-0 -translate-y-6"
+                enterTo="opacity-100 translate-y-0"
+                leave="duration-75 transition ease-linear"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 -translate-y-6"
+            >
+                <div className="w-full border-t border-border sm:!hidden">
+                    <div className="my-6">
+                        <div className="flex flex-col items-center justify-center gap-6">
+                            {navigations.map((nav) => (
+                                <MobileNavigation key={nav.label} {...nav} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </Transition>
         </nav>
     );
 }

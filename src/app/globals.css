@@ -110,3 +110,13 @@
 .sosmed_icon:hover.facebook {
     @apply text-blue-600;
 }
+
+.mobile_navigation::after {
+    @apply block h-0.5 w-0 bg-foreground content-[''];
+    transition: width 0.3s;
+}
+
+.mobile_navigation:hover::after,
+.mobile_navigation::after.active {
+    @apply w-full;
+}
