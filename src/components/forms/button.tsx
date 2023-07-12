@@ -10,7 +10,7 @@ export default function Button({
     return (
         <button
             className={cn(
-                "paper_border cursor-pointer px-1.5 py-1 transition duration-100 ease-linear hover:bg-foreground hover:text-background disabled:cursor-not-allowed sm:px-2 sm:py-1.5 md:px-4 md:py-2",
+                "paper_border cursor-pointer px-4 py-2 text-sm transition duration-100 ease-linear hover:bg-foreground hover:text-background disabled:cursor-not-allowed md:text-base",
                 className
             )}
             type="button"
