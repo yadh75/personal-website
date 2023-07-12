@@ -52,7 +52,7 @@ function Theme() {
                 )}
                 <span className="sr-only">Toggle theme</span>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="!paper_border">
+            <DropdownMenuContent align="end">
                 <DropdownMenuGroup>
                     <DropdownMenuItem
                         className="cursor-pointer"
