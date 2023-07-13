@@ -1,6 +1,6 @@
 import PaperCard from "@/components/cards/paper-card";
 import AboutMe from "./about-me";
-import SkillCard from "@/components/cards/Skill";
+import SkillCard from "@/components/cards/skill-card";
 
 import { config } from "@/lib/config";
 
