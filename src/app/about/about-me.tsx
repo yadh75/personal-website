@@ -8,7 +8,9 @@ import { cn } from "@/lib/utils";
 export default function AboutMe() {
     return (
         <PaperCard title="About Me">
-            <div className={cn("flex flex-col gap-2")}>
+            <div
+                className={cn("prose prose-zinc max-w-none dark:prose-invert")}
+            >
                 <AboutMeContent />
             </div>
         </PaperCard>
