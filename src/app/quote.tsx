@@ -4,7 +4,7 @@ import { Fragment } from "react";
 
 import useFetch from "@/hooks/useFetch";
 
-import PaperCard from "@/components/contents/paper-card";
+import PaperCard from "@/components/cards/paper-card";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { generateRandomNumber } from "@/lib/utils";

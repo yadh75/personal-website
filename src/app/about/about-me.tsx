@@ -1,6 +1,6 @@
 "use client";
 
-import PaperCard from "@/components/contents/paper-card";
+import PaperCard from "@/components/cards/paper-card";
 import AboutMeContent from "./about-me.mdx";
 
 import { cn } from "@/lib/utils";

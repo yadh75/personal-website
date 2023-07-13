@@ -17,8 +17,8 @@ export default function PaperCard({
             className={cn("paper_border relative", title && "mt-6", className)}
         >
             {title && (
-                <div className="paper_border absolute -top-6 left-5 bg-foreground px-1.5 py-1 font-bold text-background">
-                    {title}
+                <div className="paper_border absolute -top-4 left-10 bg-foreground px-4 py-1">
+                    <span className="font-bold text-background">{title}</span>
                 </div>
             )}
             <div className={cn("w-full px-4 py-3", title && "mt-4")}>

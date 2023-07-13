@@ -1,4 +1,4 @@
-import PaperCard from "@/components/contents/paper-card";
+import PaperCard from "@/components/cards/paper-card";
 import AboutMe from "./about-me";
 import SkillCard from "@/components/cards/Skill";
 

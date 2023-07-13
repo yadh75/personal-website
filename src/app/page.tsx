@@ -8,7 +8,7 @@ import {
 } from "react-icons/bs";
 
 import Quote from "./quote";
-import PaperCard from "@/components/contents/paper-card";
+import PaperCard from "@/components/cards/paper-card";
 import { Badge } from "@/components/ui/badge";
 
 import { config } from "@/lib/config";

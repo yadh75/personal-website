@@ -84,11 +84,7 @@
     }
 
     .paper_border {
-        @apply rounded-paper border-[6px] border-solid border-foreground;
-    }
-
-    .paper_border:hover {
-        @apply rounded-paper-hover;
+        @apply rounded-paper border border-solid border-foreground;
     }
 }
 
